@@ -1,0 +1,6 @@
+{
+  "name": "Gaytri Jewellers",
+  "description": "Premium Silver Rakhi and Jewellery showroom website for Gaytri Jewellers in Station Road, Rasra, Ballia, Uttar Pradesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
