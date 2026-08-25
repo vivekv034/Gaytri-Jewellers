@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Sparkles, Clock } from 'lucide-react';
+import { Menu, X, MapPin, Sparkles, Clock, Phone, MessageCircle } from 'lucide-react';
+import { STORE_INFO, getGeneralWhatsAppUrl } from '../data/storeInfo';
 
 interface NavbarProps {
   onNavigate: (sectionId: string) => void;
@@ -51,14 +52,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           <span>Station Road, Rasra, Ballia, Uttar Pradesh – 221712</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-[#f5f2ed] flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-[#d4af37]" />
-            Pure Silver Rakhis &amp; Hallmark Fine Jewellery
-          </span>
+          <a
+            href={`tel:${STORE_INFO.phoneRaw}`}
+            className="text-[#f5f2ed] hover:text-[#d4af37] transition-colors flex items-center gap-1 font-medium"
+          >
+            <Phone className="w-3 h-3 text-[#d4af37]" />
+            <span>Call: {STORE_INFO.phoneDisplay}</span>
+          </a>
+          <span className="text-[#d4af37]/60">✦</span>
+          <a
+            href={getGeneralWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#25D366] hover:underline flex items-center gap-1 font-medium"
+          >
+            <MessageCircle className="w-3 h-3 text-[#25D366]" />
+            <span>WhatsApp: {STORE_INFO.phoneDisplay}</span>
+          </a>
           <span className="text-[#d4af37]/60">✦</span>
           <span className="flex items-center gap-1 text-[#d4af37] font-medium">
             <Clock className="w-3 h-3" />
-            Open Daily: 10:00 AM – 8:30 PM
+            <span>Open: 10:00 AM – 8:30 PM</span>
           </span>
         </div>
       </div>
@@ -157,17 +171,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             ))}
 
             <div className="pt-2 grid grid-cols-2 gap-3">
+              <a
+                href={`tel:${STORE_INFO.phoneRaw}`}
+                className="flex items-center justify-center gap-2 py-3 border border-[#d4af37] text-[#d4af37] text-xs font-bold uppercase tracking-wider hover:bg-[#d4af37] hover:text-[#2a0303] cursor-pointer"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call Now</span>
+              </a>
+              <a
+                href={getGeneralWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:brightness-110 cursor-pointer"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 pt-1">
               <button
                 onClick={() => handleLinkClick('catalogue-section')}
-                className="flex items-center justify-center gap-2 py-3 border border-[#d4af37] text-[#d4af37] text-xs font-bold uppercase tracking-wider hover:bg-[#d4af37] hover:text-[#2a0303] cursor-pointer"
+                className="flex items-center justify-center gap-2 py-2.5 bg-[#2a0303] border border-[#d4af37]/40 text-[#f5f2ed] text-xs font-bold uppercase tracking-wider hover:border-[#d4af37] cursor-pointer"
               >
                 <span>Catalogue</span>
               </button>
               <button
                 onClick={() => handleLinkClick('contact-section')}
-                className="flex items-center justify-center gap-2 py-3 bg-[#d4af37] text-[#2a0303] text-xs font-bold uppercase tracking-wider hover:brightness-110 cursor-pointer"
+                className="flex items-center justify-center gap-2 py-2.5 bg-[#d4af37] text-[#2a0303] text-xs font-bold uppercase tracking-wider hover:brightness-110 cursor-pointer"
               >
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-3.5 h-3.5" />
                 <span>Showroom</span>
               </button>
             </div>

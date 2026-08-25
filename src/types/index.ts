@@ -34,6 +34,7 @@ export interface StoreContact {
   city: string;
   state: string;
   pincode: string;
+  country: string;
   phoneDisplay: string;
   phoneRaw: string;
   whatsappNumber: string;

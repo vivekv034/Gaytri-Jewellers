@@ -1,6 +1,6 @@
 import React from 'react';
-import { STORE_INFO } from '../data/storeInfo';
-import { MapPin, Sparkles, Clock, Navigation } from 'lucide-react';
+import { STORE_INFO, getGeneralWhatsAppUrl } from '../data/storeInfo';
+import { MapPin, Sparkles, Clock, Navigation, Phone, MessageCircle } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
 
             <p className="text-xs leading-relaxed text-[#f5f2ed]/60">
-              Station Road, Rasra, Ballia, Uttar Pradesh – 221712.
+              Station Road, Rasra, Ballia, Uttar Pradesh – 221712, India.
               Your trusted showroom for hallmark silver rakhis, pure sterling silver jewellery, and traditional fine craftsmanship.
             </p>
 
@@ -136,12 +136,31 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Showroom Information */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-[#d4af37] mb-4">
-              Showroom Location
+              Showroom Location &amp; Contact
             </h4>
             <div className="space-y-3 text-xs">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
-                <span>Station Road, Rasra, Ballia, Uttar Pradesh – 221712</span>
+                <span>Station Road, Rasra, Ballia, Uttar Pradesh – 221712, India</span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#d4af37] shrink-0" />
+                <a href={`tel:${STORE_INFO.phoneRaw}`} className="hover:text-[#d4af37] font-medium">
+                  {STORE_INFO.phoneDisplay}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
+                <a
+                  href={getGeneralWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#25D366] hover:underline font-semibold"
+                >
+                  WhatsApp: {STORE_INFO.phoneDisplay}
+                </a>
               </div>
 
               <div className="flex items-center gap-2.5">

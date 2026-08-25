@@ -1,6 +1,6 @@
 import React from 'react';
-import { STORE_INFO } from '../data/storeInfo';
-import { MapPin, Navigation, Clock, Building2, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { STORE_INFO, getGeneralWhatsAppUrl } from '../data/storeInfo';
+import { MapPin, Navigation, Clock, Building2, Sparkles, CheckCircle2, ShieldCheck, Phone, MessageCircle } from 'lucide-react';
 
 export const ShowroomContact: React.FC = () => {
   return (
@@ -41,13 +41,47 @@ export const ShowroomContact: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-[#f5f2ed]">Showroom Address:</strong>
-                    <span>{STORE_INFO.address}</span>
+                    <strong className="block text-[#f5f2ed] text-xs uppercase tracking-wider text-[#d4af37] mb-1">
+                      Business Address:
+                    </strong>
+                    <div className="text-sm font-medium text-[#f5f2ed] leading-relaxed">
+                      <p className="font-semibold text-[#d4af37]">Gaytri Jewellers</p>
+                      <p>Station Road, Rasra, Ballia</p>
+                      <p>Uttar Pradesh - 221712</p>
+                      <p>India</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#d4af37]/10">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="block text-[11px] uppercase tracking-wider text-[#d4af37]/80">Phone Call</span>
+                      <a href={`tel:${STORE_INFO.phoneRaw}`} className="text-sm font-semibold text-[#f5f2ed] hover:text-[#d4af37]">
+                        {STORE_INFO.phoneDisplay}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="block text-[11px] uppercase tracking-wider text-[#d4af37]/80">WhatsApp Enquiry</span>
+                      <a
+                        href={getGeneralWhatsAppUrl()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-[#25D366] hover:underline"
+                      >
+                        {STORE_INFO.phoneDisplay}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 pt-2">
+                  <Clock className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-[#f5f2ed]">Showroom Timings:</strong>
                     <span>Open 7 Days a Week: 10:00 AM – 8:30 PM</span>
@@ -68,8 +102,8 @@ export const ShowroomContact: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct Google Maps Directions CTA */}
-            <div>
+            {/* Direct Google Maps & Phone Actions */}
+            <div className="space-y-3">
               <a
                 id="contact-directions-btn"
                 href={STORE_INFO.mapDirectionsUrl}
@@ -80,6 +114,27 @@ export const ShowroomContact: React.FC = () => {
                 <Navigation className="w-4 h-4 text-[#2a0303]" />
                 <span>Get Directions via Google Maps</span>
               </a>
+
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  id="contact-call-btn"
+                  href={`tel:${STORE_INFO.phoneRaw}`}
+                  className="flex items-center justify-center gap-2 py-3 px-4 bg-[#1a0202] border border-[#d4af37]/50 text-[#d4af37] text-xs font-bold uppercase tracking-wider hover:bg-[#d4af37] hover:text-[#2a0303] transition-all cursor-pointer"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call {STORE_INFO.phoneDisplay}</span>
+                </a>
+                <a
+                  id="contact-whatsapp-btn"
+                  href={getGeneralWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
             </div>
           </div>
 

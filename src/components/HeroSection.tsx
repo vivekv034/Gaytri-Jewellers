@@ -1,7 +1,7 @@
 import React from 'react';
-import { STORE_INFO, getRakhiWhatsAppUrl } from '../data/storeInfo';
+import { STORE_INFO } from '../data/storeInfo';
 import { Hero3D } from './Hero3D';
-import { MessageCircle, MapPin, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreRakhis: () => void;

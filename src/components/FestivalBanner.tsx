@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Gift } from 'lucide-react';
+import { ArrowRight, Gift } from 'lucide-react';
 
 interface FestivalBannerProps {
   onViewRakhis: () => void;

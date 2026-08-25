@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Product } from '../types';
-import { STORE_INFO } from '../data/storeInfo';
-import { X, MapPin, ShieldCheck, Sparkles, Check, Clock } from 'lucide-react';
+import { STORE_INFO, getProductWhatsAppUrl } from '../data/storeInfo';
+import { X, MapPin, ShieldCheck, Sparkles, Check, Clock, Phone, MessageCircle } from 'lucide-react';
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -131,20 +131,42 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {/* Navigation & Action */}
             <div className="space-y-2.5 pt-2 border-t border-[#d4af37]/15">
               <a
-                id={`modal-directions-btn-${product.id}`}
-                href={STORE_INFO.mapDirectionsUrl}
+                id={`modal-whatsapp-btn-${product.id}`}
+                href={getProductWhatsAppUrl(product.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 bg-[#d4af37] text-[#2a0303] font-bold text-xs uppercase tracking-widest shadow-lg hover:brightness-110 transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 bg-[#25D366] text-white font-bold text-xs uppercase tracking-widest shadow-lg hover:brightness-110 transition-all cursor-pointer"
               >
-                <MapPin className="w-4 h-4 text-[#2a0303]" />
-                <span>Get Directions to Showroom</span>
+                <MessageCircle className="w-4 h-4" />
+                <span>Enquire via WhatsApp</span>
               </a>
+
+              <div className="grid grid-cols-2 gap-2.5">
+                <a
+                  id={`modal-call-btn-${product.id}`}
+                  href={`tel:${STORE_INFO.phoneRaw}`}
+                  className="flex items-center justify-center gap-2 py-3 px-3 bg-[#1a0202] border border-[#d4af37]/50 text-[#d4af37] text-xs font-bold uppercase tracking-wider hover:bg-[#d4af37] hover:text-[#2a0303] transition-all cursor-pointer text-center"
+                >
+                  <Phone className="w-3.5 h-3.5 shrink-0" />
+                  <span>Call {STORE_INFO.phoneDisplay}</span>
+                </a>
+
+                <a
+                  id={`modal-directions-btn-${product.id}`}
+                  href={STORE_INFO.mapDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-3 bg-[#d4af37] text-[#2a0303] font-bold text-xs uppercase tracking-wider shadow hover:brightness-110 transition-all cursor-pointer text-center"
+                >
+                  <MapPin className="w-3.5 h-3.5 shrink-0 text-[#2a0303]" />
+                  <span>Showroom Map</span>
+                </a>
+              </div>
 
               <button
                 id={`modal-close-btn-${product.id}`}
                 onClick={onClose}
-                className="w-full py-2.5 px-4 bg-[#1a0202] hover:bg-[#3a0404] text-[#f5f2ed] text-xs font-bold uppercase tracking-wider border border-[#d4af37]/30 transition-colors cursor-pointer"
+                className="w-full py-2 px-4 bg-[#1a0202] hover:bg-[#3a0404] text-[#f5f2ed]/70 hover:text-[#f5f2ed] text-[11px] uppercase tracking-wider border border-[#d4af37]/20 transition-colors cursor-pointer"
               >
                 Close &amp; Continue Browsing
               </button>
