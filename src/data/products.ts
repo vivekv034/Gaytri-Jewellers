@@ -14,6 +14,12 @@ export const CATEGORIES: CategoryInfo[] = [
     image: 'https://images.unsplash.com/photo-1611591477435-bc3277341ea2?auto=format&fit=crop&w=600&q=80'
   },
   {
+    id: 'necklaces',
+    label: 'Haar & Necklaces',
+    tagline: 'Bridal Haar, Rani Haar & Sets',
+    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80'
+  },
+  {
     id: 'silver-jewellery',
     label: 'Silver Jewellery',
     tagline: 'Pure 92.5 Sterling Silver Elegance',
@@ -38,12 +44,6 @@ export const CATEGORIES: CategoryInfo[] = [
     image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80'
   },
   {
-    id: 'necklaces',
-    label: 'Necklaces',
-    tagline: 'Bridal & Contemporary Sets',
-    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80'
-  },
-  {
     id: 'bangles',
     label: 'Bangles & Kadas',
     tagline: 'Heritage Carvings & Daily Wear',
@@ -64,7 +64,7 @@ export const CATEGORIES: CategoryInfo[] = [
 ];
 
 export const PRODUCTS: Product[] = [
-  // 8 Specific Silver Rakhi Designs
+  // Specific Silver Rakhi Designs (Every item clearly mentions Rakhi in name)
   {
     id: 'rakhi-classic',
     name: 'Classic Silver Rakhi',
@@ -138,6 +138,24 @@ export const PRODUCTS: Product[] = [
     metalType: 'Pure 92.5 Silver'
   },
   {
+    id: 'rakhi-ganesha',
+    name: 'Divine Ganesha Silver Rakhi',
+    category: 'silver-rakhi',
+    categoryLabel: 'Silver Rakhi',
+    description: 'Lord Ganesha carved in pure sterling silver to bestow auspicious beginnings, health, and wisdom upon your beloved brother.',
+    details: [
+      'Detailed Lord Ganesha silver medallion',
+      'Auspicious red-yellow sacred mauli binding',
+      'Comes with traditional roli-chawal containers',
+      'Hallmark certified 92.5 purity'
+    ],
+    image: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80',
+    isRakhi: true,
+    featured: true,
+    tag: 'Devotional',
+    metalType: 'Pure 92.5 Silver'
+  },
+  {
     id: 'rakhi-traditional',
     name: 'Traditional Indian Silver Rakhi',
     category: 'silver-rakhi',
@@ -154,6 +172,24 @@ export const PRODUCTS: Product[] = [
     featured: true,
     tag: 'Heritage',
     metalType: 'Fine Silver'
+  },
+  {
+    id: 'rakhi-swastik',
+    name: 'Shubh Swastik Silver Rakhi',
+    category: 'silver-rakhi',
+    categoryLabel: 'Silver Rakhi',
+    description: 'Sacred Swastik emblem in high-polish sterling silver with ruby-hued gemstone accents and braided silk cord.',
+    details: [
+      'Auspicious Shubh Swastik centerpiece in 92.5 silver',
+      'Reinforced silken thread with silver beads',
+      'Traditional spiritual design',
+      'Velvet pouch packaging'
+    ],
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+    isRakhi: true,
+    featured: false,
+    tag: 'Auspicious',
+    metalType: 'Pure 92.5 Silver'
   },
   {
     id: 'rakhi-designer',
@@ -192,6 +228,24 @@ export const PRODUCTS: Product[] = [
     metalType: 'Pure 92.5 Silver'
   },
   {
+    id: 'rakhi-bhaiya-bhabhi',
+    name: 'Bhaiya Bhabhi Royal Silver Rakhi & Lumba Set',
+    category: 'silver-rakhi',
+    categoryLabel: 'Silver Rakhi',
+    description: 'A grand matching pair featuring a men\'s sterling silver Rakhi for brother and a graceful silver filigree hanging Lumba for sister-in-law.',
+    details: [
+      'Matching pure silver Rakhi & hanging Lumba pair',
+      'Embellished with fine pearls and latkan bells',
+      'Includes complimentary roli, chawal & greeting card',
+      'Delivered in twin velvet jewellery box'
+    ],
+    image: 'https://images.unsplash.com/photo-1611591477435-bc3277341ea2?auto=format&fit=crop&w=800&q=80',
+    isRakhi: true,
+    featured: true,
+    tag: 'Couple Set',
+    metalType: 'Pure 92.5 Silver'
+  },
+  {
     id: 'rakhi-premium-gift',
     name: 'Premium Gift Silver Rakhi Box Set',
     category: 'silver-rakhi',
@@ -207,6 +261,56 @@ export const PRODUCTS: Product[] = [
     isRakhi: true,
     featured: true,
     tag: 'Gift Hamper',
+    metalType: 'Pure 92.5 Silver'
+  },
+
+  // Haar & Necklaces Collection (Every item explicitly mentions Haar in name)
+  {
+    id: 'haar-bridal-01',
+    name: 'Royal Heritage Bridal Gold Haar',
+    category: 'necklaces',
+    categoryLabel: 'Haar & Necklaces',
+    description: 'Majestic royal bridal Haar crafted with intricate temple gold carving and cascading drops, creating breathtaking wedding grandeur.',
+    details: ['Traditional 22K gold craft finish', 'Adjustable dori back thread for snug fit', 'Matching jhumki accents included'],
+    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80',
+    featured: true,
+    tag: 'Bridal Haar',
+    metalType: 'Fine Gold Craft'
+  },
+  {
+    id: 'haar-rani-01',
+    name: 'Traditional Kundan & Pearl Rani Haar',
+    category: 'necklaces',
+    categoryLabel: 'Haar & Necklaces',
+    description: 'An opulent multi-strand Rani Haar featuring hand-set Jadau Kundan gemstones, cultured pearl drops, and green meenakari backing.',
+    details: ['Layered royal Rani Haar silhouette', 'High-grade Kundan gemstone setting', 'Hand-strung micro pearls'],
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80',
+    featured: true,
+    tag: 'Rani Haar',
+    metalType: 'Fine Gold Craft'
+  },
+  {
+    id: 'haar-choker-01',
+    name: 'Antique Temple Style Gold Choker Haar',
+    category: 'necklaces',
+    categoryLabel: 'Haar & Necklaces',
+    description: 'A statement gold-tone choker Haar etched with Goddess Lakshmi and floral motifs, lined with auspicious dangling pearls.',
+    details: ['High-relief temple motif carving', 'Flexible neck contouring for comfortable wear', 'Intricate filigree border'],
+    image: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80',
+    featured: false,
+    tag: 'Choker Haar',
+    metalType: 'Fine Gold Craft'
+  },
+  {
+    id: 'haar-silver-01',
+    name: 'Pure 92.5 Sterling Silver Tribal Choker Haar',
+    category: 'necklaces',
+    categoryLabel: 'Haar & Necklaces',
+    description: 'Handcrafted solid sterling silver choker Haar featuring geometric tribal engravings and oxidised antique patina finish.',
+    details: ['Hallmark stamped 92.5 purity', 'Artisanal hand-hammered silver plaques', 'Adjustable braided black cord'],
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+    featured: true,
+    tag: 'Silver Haar',
     metalType: 'Pure 92.5 Silver'
   },
 
@@ -248,18 +352,6 @@ export const PRODUCTS: Product[] = [
     metalType: 'Fine Silver'
   },
   {
-    id: 'necklace-01',
-    name: 'Classic Heritage Necklace',
-    category: 'necklaces',
-    categoryLabel: 'Necklaces',
-    description: 'Majestic collar necklace crafted with royal motifs, perfect for weddings, family occasions, and auspicious gatherings.',
-    details: ['Traditional craftsmanship', 'Adjustable dori back thread', 'Matching drop accents'],
-    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80',
-    featured: true,
-    tag: 'Bridal & Occasion',
-    metalType: 'Fine Gold Craft'
-  },
-  {
     id: 'bangles-01',
     name: 'Royal Carved Silver Kada',
     category: 'bangles',
@@ -296,3 +388,4 @@ export const PRODUCTS: Product[] = [
     metalType: 'Gold Finish'
   }
 ];
+
